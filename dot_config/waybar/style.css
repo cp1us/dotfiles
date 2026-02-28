@@ -1,0 +1,146 @@
+@import url("colors/.matugen.css");
+
+* {
+    font-family: "JetBrainsMono Nerd Font Propo", sans-serif;
+    font-size: 14px;
+    border-radius: 0;
+    min-height: 0;
+    animation-duration: 3.0s;
+}
+
+window#waybar {
+    background-color: @surface;
+    border-bottom: 2px solid @outline_variant;
+    color: @on_surface;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+tooltip {
+    background-color: @surface;
+    color: @on_surface;
+    border: 2px solid @outline_variant;
+    margin: 5px;
+    padding: 2px 2px;
+}
+
+#hardware,
+#sys {
+    background-color: @primary;
+    color: @on_primary;
+    border-radius: 10px;
+    padding: 0 1px;
+    margin: 5px 2px;
+}
+#hardware:hover,
+#sys:hover {
+    background-color: @primary_fixed;
+    color: @on_primary_fixed;
+    border-radius: 10px;
+    padding: 0 1px;
+    margin: 5px 2px;
+}
+
+#workspaces {
+    background-color: @secondary_container;
+    border-radius: 10px;
+    padding: 0 8px;
+    margin: 5px 2px;
+}
+
+#workspaces button {
+    color: @on_secondary_container;
+    padding: 0 2px; 
+    margin: 5px 4px;    
+}
+
+#workspaces button:hover {
+    background-color: @secondary;
+    color: @on_secondary;
+    padding: 0 2px; 
+    margin: 5px 4px;    
+    border-radius: 100px;
+}
+
+#workspaces button.focused {
+    background-color: @primary;
+    color: @on_primary;
+    padding: 0 2px; 
+    margin: 5px 4px;    
+    border-radius: 100px;
+}
+
+#workspaces button.focused:hover {
+    background-color: @primary_fixed;
+    color: @on_primary;
+    padding: 0 2px; 
+    margin: 5px 4px;    
+    border-radius: 100px;
+}
+
+#clock {
+    background-color: @primary;
+    color: @on_primary;
+    border-radius: 10px;
+    padding: 0 8px;
+    margin: 5px 2px;
+    min-width: 15px;
+}
+
+#clock:hover {
+    background-color: @primary_fixed;
+    color: @on_primary_fixed;
+    border-radius: 10px;
+    padding: 0 8px;
+    margin: 5px 2px;
+    min-width: 15px;
+}
+
+#tray,
+#language,
+#bluetooth,
+#network,
+#wireplumber,
+#backlight {
+    background-color: @secondary_container;
+    color: @on_secondary_container;
+    border-radius: 10px;
+    padding: 0 8px;
+    margin: 5px 2px;
+    min-width: 15px;
+}
+#language:hover,
+#bluetooth:hover,
+#network:hover,
+#wireplumber:hover,
+#backlight:hover {
+    background-color: @secondary;
+    color: @on_secondary;
+    border-radius: 10px;
+    padding: 0 8px;
+    margin: 5px 2px;
+    min-width: 15px;
+}
+
+#battery.warning {
+    color: @on_tertiary_contanier;
+}
+#battery.warning:hover {
+    color: @on_tertiary_fixed;
+}
+#battery.critical {
+    color: @on_error_container;
+}
+#battery.critical:hover {
+    color: @on_error_fixed;
+}
+
+#custom-logo,
+#custom-shutdown,
+#custom-reboot,
+#battery,
+#cpu,
+#memory,
+#power-profiles-daemon {
+    margin: 0px 8px;
+}

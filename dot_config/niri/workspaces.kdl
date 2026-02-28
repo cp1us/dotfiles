@@ -1,0 +1,26 @@
+workspace "web" {
+    open-on-output "eDP-1"
+    layout {
+        always-center-single-column
+    }
+}
+workspace "cmd"
+workspace "work"
+workspace "message" {
+    layout {
+        always-center-single-column
+    }
+}
+workspace "media" {
+    layout {
+        always-center-single-column
+    }
+}
+workspace "document" {
+    layout {
+        always-center-single-column
+    }
+}
+workspace "game"
+workspace "secret"
+

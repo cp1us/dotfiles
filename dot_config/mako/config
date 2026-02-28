@@ -1,0 +1,20 @@
+include=~/.config/mako/colors/.matugen
+
+layer=top
+anchor=top-right
+
+sort=-time
+max-history=5
+max-visible=4
+
+font=JetBrainsMono Nerd Font Mono 12
+
+margin=10
+padding=4
+
+border-size=2
+border-radius=10
+max-icon-size=64
+
+[mode=dnd]
+invisible=1

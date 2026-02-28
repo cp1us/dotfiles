@@ -1,0 +1,655 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FullConfig",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "default": "https://starship.rs/config-schema.json"
+    },
+    "format": {
+      "type": "string",
+      "default": "$all"
+    },
+    "right_format": {
+      "type": "string",
+      "default": ""
+    },
+    "continuation_prompt": {
+      "type": "string",
+      "default": "[∙](bright-black) "
+    },
+    "scan_timeout": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0,
+      "default": 30
+    },
+    "command_timeout": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0,
+      "default": 500
+    },
+    "add_newline": {
+      "type": "boolean",
+      "default": true
+    },
+    "follow_symlinks": {
+      "type": "boolean",
+      "default": true
+    },
+    "palette": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "palettes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "default": {}
+    },
+    "profiles": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "default": {}
+    },
+    "aws": {
+      "$ref": "#/$defs/AwsConfig",
+      "default": {
+        "format": "on [$symbol($profile )(\\($region\\) )(\\[$duration\\] )]($style)",
+        "symbol": "☁️  ",
+        "style": "bold yellow",
+        "disabled": false,
+        "region_aliases": {},
+        "profile_aliases": {},
+        "expiration_symbol": "X",
+        "force_display": false
+      }
+    },
+    "azure": {
+      "$ref": "#/$defs/AzureConfig",
+      "default": {
+        "format": "on [$symbol($subscription)]($style) ",
+        "symbol": "󰠅 ",
+        "style": "blue bold",
+        "disabled": true,
+        "subscription_aliases": {}
+      }
+    },
+    "battery": {
+      "$ref": "#/$defs/BatteryConfig",
+      "default": {
+        "full_symbol": "󰁹 ",
+        "charging_symbol": "󰂄 ",
+        "discharging_symbol": "󰂃 ",
+        "unknown_symbol": "󰁽 ",
+        "empty_symbol": "󰂎 ",
+        "display": [
+          {
+            "threshold": 10,
+            "style": "red bold",
+            "charging_symbol": null,
+            "discharging_symbol": null
+          }
+        ],
+        "disabled": false,
+        "format": "[$symbol$percentage]($style) "
+      }
+    },
+    "buf": {
+      "$ref": "#/$defs/BufConfig",
+      "default": {
+        "format": "with [$symbol($version )]($style)",
+        "version_format": "v${raw}",
+        "symbol": "🐃 ",
+        "style": "bold blue",
+        "disabled": false,
+        "detect_extensions": [],
+        "detect_files": [
+          "buf.yaml",
+          "buf.gen.yaml",
+          "buf.work.yaml"
+        ],
+        "detect_folders": []
+      }
+    },
+    "bun": {
+      "$ref": "#/$defs/BunConfig",
+      "default": {
+        "format": "via [$symbol($version )]($style)",
+        "version_format": "v${raw}",
+        "symbol": "🥟 ",
+        "style": "bold red",
+        "disabled": false,
+        "detect_extensions": [],
+        "detect_files": [
+          "bun.lock",
+          "bun.lockb",
+          "bunfig.toml"
+        ],
+        "detect_folders": []
+      }
+    },
+    "c": {
+      "$ref": "#/$defs/CcConfig",
+      "default": {
+        "format": "via [$symbol($version(-$name) )]($style)",
+        "version_format": "v${raw}",
+        "style": "149 bold",
+        "symbol": "C ",
+        "disabled": false,
+        "detect_extensions": [
+          "c",
+          "h"
+        ],
+        "detect_files": [],
+        "detect_folders": [],
+        "commands": [
+          [
+            "cc",
+            "--version"
+          ],
+          [
+            "gcc",
+            "--version"
+          ],
+          [
+            "clang",
+            "--version"
+          ]
+        ]
+      }
+    },
+    "character": {
+      "$ref": "#/$defs/CharacterConfig",
+      "default": {
+        "format": "$symbol ",
+        "success_symbol": "[❯](bold green)",
+        "error_symbol": "[❯](bold red)",
+        "vimcmd_symbol": "[❮](bold green)",
+        "vimcmd_visual_symbol": "[❮](bold yellow)",
+        "vimcmd_replace_symbol": "[❮](bold purple)",
+        "vimcmd_replace_one_symbol": "[❮](bold purple)",
+        "disabled": false
+      }
+    },
+    "cmake": {
+      "$ref": "#/$defs/CMakeConfig",
+      "default": {
+        "format": "via [$symbol($version )]($style)",
+        "version_format": "v${raw}",
+        "symbol": "△ ",
+        "style": "bold blue",
+        "disabled": false,
+        "detect_extensions": [],
+        "detect_files": [
+          "CMakeLists.txt",
+          "CMakeCache.txt"
+        ],
+        "detect_folders": []
+      }
+    },
+    "cmd_duration": {
+      "$ref": "#/$defs/CmdDurationConfig",
+      "default": {
+        "min_time": 2000,
+        "format": "took [$duration]($style) ",
+        "style": "yellow bold",
+        "show_milliseconds": false,
+        "disabled": false,
+        "show_notifications": false,
+        "min_time_to_notify": 45000
+      }
+    },
+    "cobol": {
+      "$ref": "#/$defs/CobolConfig",
+      "default": {
+        "format": "via [$symbol($version )]($style)",
+        "version_format": "v${raw}",
+        "symbol": "⚙️ ",
+        "style": "bold blue",
+        "disabled": false,
+        "detect_extensions": [
+          "cbl",
+          "cob",
+          "CBL",
+          "COB"
+        ],
+        "detect_files": [],
+        "detect_folders": []
+      }
+    },
+    "conda": {
+      "$ref": "#/$defs/CondaConfig",
+      "default": {
+        "truncation_length": 1,
+        "format": "via [$symbol$environment]($style) ",
+        "symbol": "🅒 ",
+        "style": "green bold",
+        "ignore_base": true,
+        "detect_env_vars": [
+          "!PIXI_ENVIRONMENT_NAME"
+        ],
+        "disabled": false
+      }
+    },
+    "container": {
+      "$ref": "#/$defs/ContainerConfig",
+      "default": {
+        "format": "[$symbol \\[$name\\]]($style) ",
+        "symbol": "⬢",
+        "style": "red bold dimmed",
+        "disabled": false
+      }
+    },
+    "cpp": {
+      "$ref": "#/$defs/CcConfig",
+      "default": {
+        "format": "via [$symbol($version(-$name) )]($style)",
+        "version_format": "v${raw}",
+        "style": "149 bold",
+        "symbol": "C++ ",
+        "disabled": true,
+        "detect_extensions": [
+          "cpp",
+          "cc",
+          "cxx",
+          "c++",
+          "hpp",
+          "hh",
+          "hxx",
+          "h++",
+          "tcc"
+        ],
+        "detect_files": [],
+        "detect_folders": [],
+        "commands": [
+          [
+            "c++",
+            "--version"
+          ],
+          [
+            "g++",
+            "--version"
+          ],
+          [
+            "clang++",
+            "--version"
+          ]
+        ]
+      }
+    },
+    "crystal": {
+      "$ref": "#/$defs/CrystalConfig",
+      "default": {
+        "format": "via [$symbol($version )]($style)",
+        "version_format": "v${raw}",
+        "symbol": "🔮 ",
+        "style": "bold red",
+        "disabled": false,
+        "detect_extensions": [
+          "cr"
+        ],
+        "detect_files": [
+          "shard.yml"
+        ],
+        "detect_folders": []
+      }
+    },
+    "daml": {
+      "$ref": "#/$defs/DamlConfig",
+      "default": {
+        "symbol": "Λ ",
+        "format": "via [$symbol($version )]($style)",
+        "version_format": "v${raw}",
+        "style": "bold cyan",
+        "disabled": false,
+        "detect_extensions": [],
+        "detect_files": [
+          "daml.yaml"
+        ],
+        "detect_folders": []
+      }
+    },
+    "dart": {
+      "$ref": "#/$defs/DartConfig",
+      "default": {
+        "format": "via [$symbol($version )]($style)",
+        "version_format": "v${raw}",
+        "symbol": "🎯 ",
+        "style": "bold blue",
+        "disabled": false,
+        "detect_extensions": [
+          "dart"
+        ],
+        "detect_files": [
+          "pubspec.yaml",
+          "pubspec.yml",
+          "pubspec.lock"
+        ],
+        "detect_folders": [
+          ".dart_tool"
+        ]
+      }
+    },
+    "deno": {
+      "$ref": "#/$defs/DenoConfig",
+      "default": {
+        "format": "via [$symbol($version )]($style)",
+        "version_format": "v${raw}",
+        "symbol": "🦕 ",
+        "style": "green bold",
+        "disabled": false,
+        "detect_extensions": [],
+        "detect_files": [
+          "deno.json",
+          "deno.jsonc",
+          "deno.lock",
+          "mod.ts",
+          "deps.ts",
+          "mod.js",
+          "deps.js"
+        ],
+        "detect_folders": []
+      }
+    },
+    "directory": {
+      "$ref": "#/$defs/DirectoryConfig",
+      "default": {
+        "truncation_length": 3,
+        "truncate_to_repo": true,
+        "substitutions": {},
+        "fish_style_pwd_dir_length": 0,
+        "use_logical_path": true,
+        "format": "[$path]($style)[$read_only]($read_only_style) ",
+        "repo_root_format": "[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) ",
+        "style": "cyan bold",
+        "repo_root_style": null,
+        "before_repo_root_style": null,
+        "disabled": false,
+        "read_only": "🔒",
+        "read_only_style": "red",
+        "truncation_symbol": "",
+        "home_symbol": "~",
+        "use_os_path_sep": true
+      }
+    },
+    "direnv": {
+      "$ref": "#/$defs/DirenvConfig",
+      "default": {
+        "format": "[$symbol$loaded/$allowed]($style) ",
+        "symbol": "direnv ",
+        "style": "bold bright-yellow",
+        "disabled": true,
+        "detect_extensions": [],
+        "detect_env_vars": [
+          "DIRENV_FILE"
+        ],
+        "detect_files": [
+          ".envrc"
+        ],
+        "detect_folders": [],
+        "allowed_msg": "allowed",
+        "not_allowed_msg": "not allowed",
+        "denied_msg": "denied",
+        "loaded_msg": "loaded",
+        "unloaded_msg": "not loaded"
+      }
+    },
+    "docker_context": {
+      "$ref": "#/$defs/DockerContextConfig",
+      "default": {
+        "symbol": "🐳 ",
+        "style": "blue bold",
+        "format": "via [$symbol$context]($style) ",
+        "only_with_files": true,
+        "disabled": false,
+        "detect_extensions": [],
+        "detect_files": [
+          "compose.yml",
+          "compose.yaml",
+          "docker-compose.yml",
+          "docker-compose.yaml",
+          "Dockerfile"
+        ],
+        "detect_folders": []
+      }
+    },
+    "dotnet": {
+      "$ref": "#/$defs/DotnetConfig",
+      "default": {
+        "format": "via [$symbol($version )(🎯 $tfm )]($style)",
+        "version_format": "v${raw}",
+        "symbol": ".NET ",
+        "style": "blue bold",
+        "heuristic": true,
+        "disabled": false,
+        "detect_extensions": [
+          "csproj",
+          "fsproj",
+          "xproj"
+        ],
+        "detect_files": [
+          "global.json",
+          "project.json",
+          "Directory.Build.props",
+          "Directory.Build.targets",
+          "Packages.props"
+        ],
+        "detect_folders": []
+      }
+    },
+    "elixir": {
+      "$ref": "#/$defs/ElixirConfig",
+      "default": {
+        "format": "via [$symbol($version \\(OTP $otp_version\\) )]($style)",
+        "version_format": "v${raw}",
+        "symbol": "💧 ",
+        "style": "bold purple",
+        "disabled": false,
+        "detect_extensions": [],
+        "detect_files": [
+          "mix.exs"
+        ],
+        "detect_folders": []
+      }
+    },
+    "elm": {
+      "$ref": "#/$defs/ElmConfig",
+      "default": {
+        "format": "via [$symbol($version )]($style)",
+        "version_format": "v${raw}",
+        "symbol": "🌳 ",
+        "style": "cyan bold",
+        "disabled": false,
+        "detect_extensions": [
+          "elm"
+        ],
+        "detect_files": [
+          "elm.json",
+          "elm-package.json",
+          ".elm-version"
+        ],
+        "detect_folders": [
+          "elm-stuff"
+        ]
+      }
+    },
+    "env_var": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/EnvVarConfig"
+      },
+      "default": {}
+    },
+    "erlang": {
+      "$ref": "#/$defs/ErlangConfig",
+      "default": {
+        "format": "via [$symbol($version )]($style)",
+        "version_format": "v${raw}",
+        "symbol": " ",
+        "style": "bold red",
+        "disabled": false,
+        "detect_extensions": [],
+        "detect_files": [
+          "rebar.config",
+          "erlang.mk"
+        ],
+        "detect_folders": []
+      }
+    },
+    "fennel": {
+      "$ref": "#/$defs/FennelConfig",
+      "default": {
+        "format": "via [$symbol($version )]($style)",
+        "version_format": "v${raw}",
+        "symbol": "🧅 ",
+        "style": "bold green",
+        "disabled": true,
+        "detect_extensions": [
+          "fnl"
+        ],
+        "detect_files": [],
+        "detect_folders": []
+      }
+    },
+    "fill": {
+      "$ref": "#/$defs/FillConfig",
+      "default": {
+        "style": "bold black",
+        "symbol": ".",
+        "disabled": false
+      }
+    },
+    "fortran": {
+      "$ref": "#/$defs/FortranConfig",
+      "default": {
+        "format": "via [$symbol($version(-$name) )]($style)",
+        "version_format": "${raw}",
+        "symbol": "🅵  ",
+        "style": "bold purple",
+        "disabled": false,
+        "detect_extensions": [
+          "f",
+          "F",
+          "for",
+          "FOR",
+          "ftn",
+          "FTN",
+          "f77",
+          "F77",
+          "f90",
+          "F90",
+          "f95",
+          "F95",
+          "f03",
+          "F03",
+          "f08",
+          "F08",
+          "f18",
+          "F18"
+        ],
+        "detect_files": [
+          "fpm.toml"
+        ],
+        "detect_folders": [],
+        "commands": [
+          [
+            "gfortran",
+            "--version"
+          ],
+          [
+            "flang",
+            "--version"
+          ],
+          [
+            "flang-new",
+            "--version"
+          ]
+        ]
+      }
+    },
+    "fossil_branch": {
+      "$ref": "#/$defs/FossilBranchConfig",
+      "default": {
+        "format": "on [$symbol$branch]($style) ",
+        "symbol": " ",
+        "style": "bold purple",
+        "truncation_length": 9223372036854775807,
+        "truncation_symbol": "…",
+        "disabled": true
+      }
+    },
+    "fossil_metrics": {
+      "$ref": "#/$defs/FossilMetricsConfig",
+      "default": {
+        "format": "([+$added]($added_style) )([-$deleted]($deleted_style) )",
+        "added_style": "bold green",
+        "deleted_style": "bold red",
+        "only_nonzero_diffs": true,
+        "disabled": true
+      }
+    },
+    "gcloud": {
+      "$ref": "#/$defs/GcloudConfig",
+      "default": {
+        "format": "on [$symbol$account(@$domain)(\\($region\\))]($style) ",
+        "symbol": "☁️  ",
+        "style": "bold blue",
+        "disabled": false,
+        "region_aliases": {},
+        "project_aliases": {},
+        "detect_env_vars": []
+      }
+    },
+    "git_branch": {
+      "$ref": "#/$defs/GitBranchConfig",
+      "default": {
+        "format": "on [$symbol$branch(:$remote_branch)]($style) ",
+        "symbol": " ",
+        "style": "bold purple",
+        "truncation_length": 9223372036854775807,
+        "truncation_symbol": "…",
+        "only_attached": false,
+        "always_show_remote": false,
+        "ignore_branches": [],
+        "ignore_bare_repo": false,
+        "disabled": false
+      }
+    },
+    "git_commit": {
+      "$ref": "#/$defs/GitCommitConfig",
+      "default": {
+        "commit_hash_length": 7,
+        "format": "[\\($hash$tag\\)]($style) ",
+        "style": "green bold",
+        "only_detached": true,
+        "disabled": false,
+        "tag_symbol": " 🏷  ",
+        "tag_disabled": true,
+        "tag_max_candidates": 0
+      }
+    },
+    "git_metrics": {
+      "$ref": "#/$defs/GitMetricsConfig",
+      "default": {
+        "added_style": "bold green",
+        "deleted_style": "bold red",
+        "only_nonzero_diffs": true,
+        "format": "([+$added]($added_style) )([-$deleted]($deleted_style) )",
+        "disabled": true,
+        "ignore_submodules": false
+      }
+    },
+    "git_state": {
+      "$ref": "#/$defs/GitStateConfig",
+   

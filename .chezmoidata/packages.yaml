@@ -1,0 +1,108 @@
+packages:
+  linux:
+    arch:
+      pacman:
+        # wayland
+        - 'wayland'
+        - 'xorg-xwayland'
+        - 'xwayland-satellite'
+        - 'qt6-wayland'
+
+        # shell
+        - 'zsh'
+        - 'zsh-autosuggestions'
+        - 'zsh-syntax-highlighting'
+
+        # sys
+        - 'bluez'
+        - 'wireplumber'
+        - 'power-profiles-daemon'
+        - 'brightnessctl'
+        - 'wl-clipboard'
+        - 'cliphist'
+
+        # instruments
+        - 'gcc'
+        - 'gdb'
+        - 'clang'
+        - 'rust'
+        - 'python'
+        - 'python-pip'
+
+        # virtualization
+        - 'libvirt'
+        - 'qemu-desktop'
+        - 'virt-manager'
+
+        # printing
+        - 'cups'
+        - 'gutenprint'
+        - 'system-config-printer'
+
+        # cli utilities
+        - 'calcurse'
+        - 'yazi'
+        - 'jq'
+        - 'poppler'
+        - 'fd'
+        - 'ripgrep'
+        - 'fzf'
+        - 'zoxide'
+        - 'resvg'
+        - 'imagemagick'
+        - 'openssh'
+        - 'inetutils'
+        - 'gopass'
+        - '7zip'
+        - 'neovim'
+        - 'starship'
+        - 'tmux'
+        - 'git'
+        - 'htop'
+        - 'wiremix'
+        - 'ffmpeg'
+        - 'bluetui'
+        - 'gvfs'
+        - 'gvfs-smb'
+        - 'gvfs-smb'
+
+        # gui utilities
+        - 'thunar'
+        - 'thunar-archive-plugin'
+        - 'thunar-media-tags-plugin'
+        - 'thunar-volman'
+        - 'tumbler'
+        - 'ffmpegthumbnailer'
+        - 'file-roller'
+        - 'qalculate-gtk'
+        - 'ristretto'
+        - 'mpv'
+        - 'foot'
+        - 'foot-terminfo'
+        - 'fuzzel'
+        - 'firefox'
+        - 'zathura'
+        - 'zathura-djvu'
+        - 'zathura-pdf-poppler'
+
+        # dm
+        - 'ly'
+
+        # niri env
+        - 'niri'
+        - 'gamescope'
+        - 'waybar'
+        - 'mako'
+        - 'swww'
+        - 'polkit-kde-agent'
+        - 'swayidle'
+        - 'gtklock'
+        - 'xdg-utils'
+        - 'xdg-desktop-portal-gtk'
+        - 'xdg-desktop-portal-gnome'
+
+        # styling
+        - 'ttf-jetbrains-mono-nerd'
+        - 'breeze'
+        - 'matugen'
+        - 'qt6ct'

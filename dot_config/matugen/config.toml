@@ -1,0 +1,67 @@
+[config.wallpaper]
+command = "swww"
+arguments = ["img", "--transition-type", "top"]
+set = true
+
+[config]
+[templates.color-scheme]
+input_path = 'templates/matugen.colors'
+output_path = '~/.local/share/color-schemes/.matugen.colors'
+
+[templates.foot]
+input_path = 'templates/foot-colors.ini'
+output_path = '~/.config/foot/themes/.matugen'
+
+[templates.fuzzel]
+input_path = 'templates/fuzzel-colors.ini'
+output_path = '~/.config/fuzzel/themes/.matugen'
+
+[templates.gtk3]
+input_path = 'templates/gtk-colors.css'
+output_path = '~/.config/gtk-3.0/colors/.matugen.css'
+post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
+
+[templates.gtk4]
+input_path = 'templates/gtk-colors.css'
+output_path = '~/.config/gtk-4.0/colors/.matugen.css'
+
+[templates.gtklock]
+input_path = 'templates/gtklock-colors.css'
+output_path = '~/.config/gtklock/colors/.matugen.css'
+
+[templates.mako]
+input_path = 'templates/mako-colors'
+output_path = '~/.config/mako/colors/.matugen'
+post_hook = 'makoctl reload'
+
+[templates.niri]
+input_path = 'templates/niri-colors.kdl'
+output_path = '~/.config/niri/colors/.matugen.kdl'
+post_hook = 'niri msg action load-config-file'
+
+[templates.nvim]
+input_path = 'templates/nvim-colors.vim'
+output_path = '~/.config/nvim/colors/.matugen.vim'
+post_hook = 'pkill -SIGUSR1 nvim'
+
+[templates.qt6ct]
+input_path = 'templates/qtct-colors.conf'
+output_path = '~/.config/qt6ct/colors/.matugen.conf'
+
+[templates.tmux]
+input_path = 'templates/tmux-colors.conf'
+output_path = '~/.config/tmux/themes/.matugen.conf'
+post_hook = 'tmux source-file ~/.config/tmux/themes/.matugen.conf' 
+
+[templates.waybar]
+input_path = 'templates/colors.css'
+output_path = '~/.config/waybar/colors/.matugen.css'
+#post_hook = 'pkill -SIGUSR2 waybar'
+
+[templates.yazi]
+input_path = 'templates/yazi-colors.toml'
+output_path = '~/.config/yazi/theme.toml'
+
+[templates.zathura]
+input_path = 'templates/zathura-colors'
+output_path = '~/.config/zathura/themes/.matugen'

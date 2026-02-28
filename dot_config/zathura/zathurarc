@@ -1,0 +1,2 @@
+include themes/zathura-gruvbox-dark
+set font "JetBrains Mono Bold 12"

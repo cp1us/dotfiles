@@ -1,0 +1,99 @@
+// WINDOW RULES
+// eyecandy
+window-rule {
+    match is-floating=true
+    geometry-corner-radius 10
+    clip-to-geometry true
+}
+window-rule {
+    match app-id="^floating-terminal$"
+    open-floating true
+}
+
+// specific application rules
+window-rule {
+    match app-id=r#"thunar"#
+    exclude title="^.* - Thunar$"
+
+    open-floating true
+} 
+
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+}
+
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+/-window-rule {
+    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    default-column-width {}
+}
+
+// named workspaces
+window-rule {
+    match at-startup=true app-id=r#"firefox$"#
+
+    open-on-workspace "web"
+    open-maximized true
+}
+
+window-rule {
+    match app-id=r#"^dev\.zed\.Zed$"#
+
+    open-on-workspace "work"
+}
+
+window-rule {
+    match at-startup=true app-id=r#"^discord"#
+    match at-startup=true app-id=r#"^com\.discordapp\.Discord$"#
+    match at-startup=true app-id=r#"^org\.telegram\.desktop$"#
+
+    open-on-workspace "message"
+}
+
+window-rule {
+    match app-id=r#"^org\.pwmt\.zathura$"#
+    match app-id="^obsidian$"
+
+    open-on-workspace "document"
+}
+
+window-rule {
+    match at-startup=true app-id="steam"
+
+    open-on-workspace "game"
+}
+
+window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+
+    block-out-from "screen-capture"
+    open-on-workspace "secret"
+
+}
+
+
+// LAYER RULES
+layer-rule {
+    match namespace="^notifications$"
+
+    block-out-from "screencast"
+}
+
+/-layer-rule {
+    match namespace="^swaync-control-center$"
+    match namespace="^swaync-notification-window$"
+    
+    block-out-from "screencast"
+}
+
+/-layer-rule {
+    match namespace="^wallpaper$"
+
+    place-within-backdrop true
+}
