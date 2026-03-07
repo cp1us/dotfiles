@@ -1,0 +1,33 @@
+[main]
+{{ if lookPath "matugen" }}
+include=~/.config/foot/themes/.matugen
+{{ else }} 
+include=~/.config/foot/themes/catppuccin-mocha
+{{ end }}
+title=footerm
+font=JetBrainsMono NL Nerd Font:size=12
+pad=10x10
+initial-window-size-pixels=900x700
+
+[environment]
+EDITOR=nvim
+VISUAL=nvim
+
+[bell]
+system=no
+
+[colors-dark]
+alpha=1.0
+[colors-light]
+alpha=1.0
+
+[csd]
+preferred=server
+
+[cursor]
+style=beam
+unfocused-style=hollow
+blink=yes
+blink-rate=600
+
+
