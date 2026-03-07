@@ -1,0 +1,69 @@
+README.md
+packagelist.txt
+.config/*
+.local/state/*
+
+!.config/tmux
+!.config/nvim
+!.config/starship-rs
+
+{{ if lookPath "cava" }}
+!.config/cava
+{{ end }}
+
+{{ if lookPath "cliphist" }}
+!.config/cliphist
+{{ end }}
+
+{{ if lookPath "foot" }}
+!.config/foot
+{{ end }}
+
+{{ if lookPath "fuzzel" }}
+!.config/fuzzel
+{{ end }}
+
+{{ if lookPath "mako" }}
+!.config/mako
+{{ end }}
+
+{{ if lookPath "matugen" }}
+!.config/matugen
+!.config/qt6ct
+!.config/gtk-3.0
+!.config/gtk-4.0
+{{ end }}
+
+{{ if lookPath "mpd" }}
+!.config/rmpc
+!.config/mpd
+!.local/state/mpd
+{{ end }}
+
+{{ if lookPath "mpv" }}
+!.config/mpv
+{{ end }}
+
+{{ if lookPath "calcurse" }}
+!.config/calcurse
+{{ end }}
+
+{{ if lookPath "swayidle" }}
+!.config/swayidle
+{{ end }}
+
+{{ if lookPath "waybar" }}
+!.config/waybar
+{{ end }}
+
+{{ if lookPath "thunar" }}
+!.config/xfce4
+{{ end }}
+
+{{ if lookPath "yazi" }}
+!.config/yazi
+{{ end }}
+
+{{ if lookPath "zathura" }}
+!.config/zathura
+{{ end }}

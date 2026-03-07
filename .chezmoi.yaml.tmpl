@@ -1,8 +1,5 @@
-{{- $choices := list "desktop" "laptop" -}}
-{{- $hosttype := promptChoiceOnce . "hosttype" "Set your host type" $choices -}}
 {{- $name := promptStringOnce . "name" "Set your name" -}}
 {{- $email := promptStringOnce . "email" "Set your email address" -}}
-{{- $autoSetup := promptBoolOnce . "autoSetup" "Install and setup packages automatically?" -}}
 
 color: "auto"
 
@@ -12,7 +9,5 @@ merge:
     - "-d"
 
 data:
-  hosttype: {{ $hosttype | quote }}
   name: {{ $name | quote }}
   email: {{ $email | quote }}
-  autoSetup: {{ $autoSetup }}
