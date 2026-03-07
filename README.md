@@ -21,6 +21,4 @@ chezmoi diff
 #apply changes
 chezmoi apply -v
 ```
-  
-If you are using Arch Linux and set *Auto setup* to true during dotfiles applying, chezmoi will automatically install the necessary packages.   
-If you are using a different distribution or set *Auto setup* to false, don't forget to check the package list in *.chezmoidata/packages.yaml*.   
+The script will automatically apply the appropriate dotfiles for the installed programs. If you have pre-installed any package, launch **chezmoi apply** again to apply its dotfiles from dot_config.
