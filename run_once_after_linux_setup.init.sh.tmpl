@@ -1,11 +1,8 @@
 {{- if eq .chezmoi.os "linux" -}}
 #!/usr/bin/env bash
 
-{{- if lookPath "matugen" -}}
-matugen image "$HOME/themes/wallpapers/gruvbox-nostalgic-field.jpeg"
-{{- end -}}
-{{- if lookPath "mpd" -}}
+{{ if lookPath "mpd" }}
 systemctl enable mpd.socket --user --now
-{{- end -}}
+{{ end }}
 echo done!
-{{- end -}}
+{{ end }}

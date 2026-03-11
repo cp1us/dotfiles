@@ -1,0 +1,38 @@
+layout {
+    background-color "#363a4f"
+
+    focus-ring {
+        active-gradient from="#8bd5ca" to="#7dc4e4" angle=45
+    }
+
+    border {
+        active-gradient from="#8bd5ca" to="#7dc4e4" angle=45
+        inactive-gradient from="#939ab7" to="#8087a2" angle=45
+        urgent-gradient from="#ed8796" to="#ee99a0" angle=45
+    }
+
+    shadow {
+        color "#18192670"
+    }
+
+    tab-indicator {
+        active-gradient from="#8bd5ca" to="#7dc4e4" angle=45
+        inactive-gradient from="#939ab7" to="#8087a2" angle=45
+        urgent-gradient from="#ed8796" to="#ee99a0" angle=45
+    }
+
+    insert-hint {
+        gradient from="#8bd5ca" to="#7dc4e4" angle=45
+    }
+}
+
+recent-windows {
+    highlight {
+        active-color "#8bd5ca"
+        urgent-color "#ed8796"
+    }
+}
+
+overview {
+    backdrop-color "#24273a"
+}

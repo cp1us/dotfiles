@@ -1,0 +1,18 @@
+# history
+export HISTFILE=~/.histfile
+export HISTSIZE=5000
+export SAVEHIST=5000
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_REDUCE_BLANKS 
+
+# xdg
+export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
+
+# editor & manpager
+export EDITOR=nvim
+export VISUAL=nvim
+export MANPAGER='nvim +Man!'

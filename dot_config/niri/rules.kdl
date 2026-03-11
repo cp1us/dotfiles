@@ -1,4 +1,3 @@
-// WINDOW RULES
 // eyecandy
 window-rule {
     match is-floating=true
@@ -77,8 +76,7 @@ window-rule {
 
 }
 
-
-// LAYER RULES
+// layer rules
 layer-rule {
     match namespace="^notifications$"
 

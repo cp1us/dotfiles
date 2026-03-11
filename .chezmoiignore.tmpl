@@ -1,11 +1,12 @@
 README.md
-packagelist.txt
 .config/*
 .local/state/*
+.local/share/*
 
-!.config/tmux
 !.config/nvim
-!.config/starship-rs
+!.config/starship
+!.config/tmux
+!.config/zsh
 
 {{ if lookPath "cava" }}
 !.config/cava
@@ -23,15 +24,17 @@ packagelist.txt
 !.config/fuzzel
 {{ end }}
 
+{{ if lookPath "imv" }}
+!.config/imv
+{{ end }}
+
 {{ if lookPath "mako" }}
 !.config/mako
 {{ end }}
 
-{{ if lookPath "matugen" }}
-!.config/matugen
-!.config/qt6ct
-!.config/gtk-3.0
-!.config/gtk-4.0
+{{ if lookPath "mc" }}
+!.config/mc
+!.local/share/mc
 {{ end }}
 
 {{ if lookPath "mpd" }}
@@ -44,12 +47,24 @@ packagelist.txt
 !.config/mpv
 {{ end }}
 
+{{ if lookPath "niri" }}
+!.config/niri
+{{ end }}
+
 {{ if lookPath "calcurse" }}
 !.config/calcurse
 {{ end }}
 
+{{ if lookPath "qt6ct" }}
+!.config/qt6ct
+{{ end }}
+
 {{ if lookPath "swayidle" }}
 !.config/swayidle
+{{ end }}
+
+{{ if lookPath "swaylock" }}
+!.config/swaylock
 {{ end }}
 
 {{ if lookPath "waybar" }}

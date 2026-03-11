@@ -1,0 +1,184 @@
+// -*- mode: jsonc -*-
+{
+  "layer": "top",
+  "position": "top", 
+  "height": 35,
+  // "width": 1280,
+  "spacing": 0,
+  "reload_style_on_change": true,
+
+  "modules-left": ["group/sys", "niri/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "tray",
+    "niri/language",
+    "bluetooth",
+    "network",
+    "wireplumber",
+    "backlight",
+    "group/hardware"
+  ],
+
+  "group/sys": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": true
+    },
+    "modules": ["custom/logo", "custom/shutdown", "custom/reboot"]
+  },
+
+  "custom/logo": {
+    "format": "󰣇",
+    "tooltip-format": " Fastfetch",
+    "on-click": "foot --app-id floating-terminal --hold fastfetch"
+  },
+
+  "custom/shutdown": {
+    "format": "󰐥",
+    "tooltip-format": "󰐥 Shutdown",
+    "on-click": "shutdown now"
+  },
+
+  "custom/reboot": {
+    "format": "󰜉",
+    "tooltip-format": "󰜉 Reboot",
+    "on-click": "reboot"
+  },
+
+  "niri/workspaces": {
+   	"format": "{icon}",
+    "format-icons": {
+        "web": "󰖟",
+        "cmd": "",
+        "work": "",
+        "message": "",
+        "media": "",
+        "document": "󰧮",
+        "game": "󰐼",
+        "secret": "󰌋"
+    }
+  },
+
+  "clock": {
+    "interval": 1,
+    "format": " {:%H:%M:%S}",
+    "tooltip-format": "<span>{calendar}</span>",
+    "calendar": {
+        "mode": "month",
+        "format": {
+            "today": "<b><u>{}</u></b>"
+        },
+        "on-scroll": 1
+    },
+    "actions": {
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down"
+    },
+    "on-click": "foot --app-id floating-terminal calcurse"
+  },
+
+  "tray": {
+    "icons": {
+      "blueman": "bluetooth",
+      "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+    },
+    "spacing": 8,
+    "reverse-direction": true
+  },
+
+  "niri/language": {
+    "format": " {}",
+    "format-en": "en",
+    "format-ru": "ру"
+  },
+
+  "bluetooth": {
+    "format": " {status}",
+    "format-no-controller": "",
+    "format-disabled": "󰂲",
+    "format-connected": "󰂱 {num_connections}",
+    "format-connected-battery": "󰥉 {device_battery_percentage}%",
+    "tooltip-format": " {controller_alias}, {controller_address}",
+    "tooltip-format-disabled": "󰂲 Bluetooth disabled",
+    "tooltip-format-connected": "󰂱 {controller_alias},\t{controller_address}\n󰾰 {device_enumerate}",
+    "tooltip-format-enumerate-connected": "󰂱 {device_alias}, {device_address}",
+    "tooltip-format-enumerate-connected-battery": "󰂱 {device_alias},\t{device_address}\n󰥉 {device_battery_percentage}%",
+    "on-click": "foot --app-id floating-terminal bluetui"
+  },
+
+  "network": {
+    "format-wifi": "{icon}",
+    "format-ethernet": "󱂇",
+    "format-linked": "󰤫",
+    "format-disconnected": "󰤮",
+    "format-disabled": "",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "tooltip-format": "󱇢 {essid}, 󰢾 {signalStrength}%",
+    "tooltip-format-disconnected": "󰌙 No connection",
+    "tooltip-format-disabled": "󰌙 Interface is disabled",
+    "on-click": "foot --app-id floating-terminal nmtui"
+  },
+
+  "wireplumber": {
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "format-icons": ["", "", ""],
+    "tooltip-format": "󱄠 {node_name}",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "on-click": "foot --app-id floating-terminal wiremix"
+  },
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
+  },
+
+  "group/hardware": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": false
+    },
+    "modules": [
+        "battery", 
+        "cpu", 
+        "memory", 
+        "power-profiles-daemon"
+    ]
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-full": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰂄 {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["󰁻", "󰁽", "󰁿", "󰂁", "󰁹"],
+    "tooltip-format": "{timeTo} 󰁹: {capacity}%"
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "󰤁 Power profile: {profile}\n󰟁 Driver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+  "cpu": {
+    "format": " {usage}%",
+    "tooltip": false,
+    "on-click": "foot --app-id floating-terminal htop"
+  },
+  "memory": {
+    "format": " {}%",
+    "tooltip": false,
+    "on-click": "foot --app-id floating-terminal htop"
+  }
+}

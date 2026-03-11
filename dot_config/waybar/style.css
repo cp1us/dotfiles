@@ -1,0 +1,137 @@
+@import url("colors/catppuccin-macchiato-teal.css");
+
+* {
+    font-family: "JetBrainsMono Nerd Font Propo", sans-serif;
+    font-size: 14px;
+    border-radius: 0;
+    min-height: 0;
+    animation-duration: 3.0s;
+}
+
+window#waybar {
+    background-color: @background;
+    border-bottom: 2px solid @outline;
+    color: @on_surface;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+tooltip {
+    background-color: @background;
+    color: @on_surface;
+    border: 2px solid @outline;
+    margin: 5px;
+    padding: 2px 2px;
+}
+
+#hardware,
+#sys {
+    background-color: @accent;
+    color: @surface0;
+    border-radius: 10px;
+    padding: 0 1px;
+    margin: 5px 2px;
+}
+#hardware:hover,
+#sys:hover {
+    background-color: @preaccent;
+    color: @surface0;
+}
+
+#workspaces {
+    background-color: @surface0;
+    border-radius: 10px;
+    padding: 0 8px;
+    margin: 5px 2px;
+}
+
+#workspaces button {
+    color: @foreground;
+    padding: 0 2px; 
+    margin: 5px 4px;    
+}
+
+#workspaces button:hover {
+    color: @surface0;
+    border-radius: 100px;
+}
+
+#workspaces button.focused {
+    background-color: @accent;
+    color: @surface0;
+    padding: 0 2px; 
+    margin: 5px 4px;    
+    border-radius: 100px;
+}
+
+#workspaces button.focused:hover {
+    background-color: @preaccent;
+    color: @surface1;
+}
+
+#clock {
+    background-color: @accent;
+    color: @surface0;
+    border-radius: 10px;
+    padding: 0 8px;
+    margin: 5px 2px;
+    min-width: 15px;
+}
+
+#clock:hover {
+    background-color: @preaccent;
+    color: @surface1;
+}
+
+#tray,
+#language,
+#bluetooth,
+#network,
+#wireplumber,
+#backlight {
+    background-color: @surface0;
+    color: @foreground;
+    border-radius: 10px;
+    padding: 0 8px;
+    margin: 5px 2px;
+    min-width: 15px;
+}
+
+#tray menu {
+    background-color: @background;
+    color: @foreground;
+    border: 2px solid @outline;
+    border-radius: 0px;
+}
+
+#language:hover,
+#bluetooth:hover,
+#network:hover,
+#wireplumber:hover,
+#backlight:hover {
+    background-color: @surface1;
+    color: @foreground;
+}
+
+#custom-logo,
+#custom-shutdown,
+#custom-reboot,
+#battery,
+#cpu,
+#memory,
+#power-profiles-daemon {
+    margin: 0px 8px;
+}
+
+#custom-shutdown:hover,
+#custom-reboot:hover {
+    color: @alert;
+}
+
+#battery.warning {
+    color: @attention;
+}
+#battery.critical {
+    color: @alert;
+}
+

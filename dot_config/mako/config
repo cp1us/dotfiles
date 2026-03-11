@@ -1,8 +1,4 @@
-{{ if lookPath "matugen" }}
-include=~/.config/mako/colors/.matugen
-{{ else }}
-include=~/.config/mako/colors/gruvbox
-{{ end }}
+include=~/.config/mako/colors/catppuccin-macchiato-teal
 
 layer=top
 anchor=top-right
