@@ -25,7 +25,7 @@ tooltip {
 }
 
 #hardware,
-#sys {
+#custom-swaync {
     background-color: @primary;
     color: @on-primary;
     border-radius: 10px;
@@ -33,7 +33,7 @@ tooltip {
     margin: 5px 2px;
 }
 #hardware:hover,
-#sys:hover {
+#custom-swaync:hover {
     background-color: @on-primary;
     color: @primary;
 }
@@ -88,7 +88,8 @@ tooltip {
 #bluetooth,
 #network,
 #wireplumber,
-#backlight {
+#backlight, 
+#sys {
     background-color: @surface;
     color: @on-surface;
     border-radius: 10px;
@@ -116,7 +117,8 @@ tooltip {
 #bluetooth:hover,
 #network:hover,
 #wireplumber:hover,
-#backlight:hover {
+#backlight:hover, 
+#sys:hover {
     background-color: @on-surface;
     color: @surface;
 }

@@ -70,6 +70,7 @@ window-rule {
 window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    match app-id=r#"^Throne$"#
 
     block-out-from "screen-capture"
     open-on-workspace "secret"
@@ -78,15 +79,15 @@ window-rule {
 
 // layer rules
 layer-rule {
-    match namespace="^notifications$"
-
+    match namespace="^swaync-control-center$"
+    match namespace="^swaync-notification-window$"
+    
     block-out-from "screencast"
 }
 
 /-layer-rule {
-    match namespace="^swaync-control-center$"
-    match namespace="^swaync-notification-window$"
-    
+    match namespace="^notifications$"
+
     block-out-from "screencast"
 }
 

@@ -1,0 +1,50 @@
+{
+  "cssPriority": "user",
+
+  "layer": "overlay",
+  "layer-shell": true,
+  "control-center-layer": "overlay",
+
+  "positionX": "right",
+  "positionY": "top",
+  "control-center-positionX": "right",
+  "control-center-positionY": "top",
+
+  "fit-to-screen": true,
+  "control-center-margin-top": 5,
+  "control-center-margin-bottom": 5,
+  "control-center-margin-left": 5,
+  "control-center-margin-right": 5,
+
+  "notification-body-image-height": 100,
+  "notification-body-image-width": 200,
+  "notification-icon-size": 32,
+
+  "timeout": 5,
+  "timeout-low": 3,
+  "timeout-critical": 0,
+
+  "widget-config": {
+    "dnd": {
+      "text": "󱨩 Do not disturb"
+    },
+
+    "mpris": {
+      "blur": true,
+      "image-size": 64
+    },
+
+    "title": {
+      "text": "Notifications",
+      "button-text": "󱏫 Clear",
+      "clear-all-button": true
+    }
+  },
+
+  "widgets": [
+    "inhibitors",
+    "mpris",
+    "notifications",
+    "dnd"
+  ]
+}
