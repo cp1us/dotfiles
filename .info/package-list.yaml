@@ -49,7 +49,10 @@
 # screenrec
 - 'wf-recorder'
 # calendar
+- 'vdirsyncer'
 - 'khal'
+# email
+- 'aerc'
 # file managment
 - 'broot'
 - 'yt-dlp'

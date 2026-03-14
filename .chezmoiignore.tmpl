@@ -5,7 +5,15 @@ README.md
 !.config/nvim
 !.config/starship
 !.config/tmux
-!.config/zsh
+
+{{ if lookPath "aerc" }}
+!.config/aerc
+{{ end }}
+
+{{ if lookPath "broot" }}
+!.config/broot
+!.local/share/broot
+{{ end }}
 
 {{ if lookPath "cava" }}
 !.config/cava
@@ -27,6 +35,11 @@ README.md
 !.config/imv
 {{ end }}
 
+{{ if lookPath "khal" }}
+!.config/khal
+!.local/share/khal
+{{ end }}
+
 {{ if lookPath "mako" }}
 !.config/mako
 {{ end }}
@@ -43,10 +56,6 @@ README.md
 
 {{ if lookPath "niri" }}
 !.config/niri
-{{ end }}
-
-{{ if lookPath "calcurse" }}
-!.config/calcurse
 {{ end }}
 
 {{ if lookPath "qt6ct" }}
