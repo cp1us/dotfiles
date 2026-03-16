@@ -7,7 +7,7 @@ framerate = 60
 sensitivity = 100
 
 [input]
-method = pulse
+method = pipewire
 source = auto
 ; method = fifo
 ; source = /tmp/mpd.fifo
@@ -17,4 +17,4 @@ method = noncurses
 orientation = bottom
 
 [color]
-theme = 'catppuccin-macchiato.cava'
+theme = 'gruvbox-dark.cava'
