@@ -1,8 +1,9 @@
 @import url("colors/gruvbox-dark.css");
 
 * {
+    all: unset;
     font-family: "JetBrainsMono Nerd Font Propo", sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     border-radius: 0;
     min-height: 0;
     animation-duration: 3.0s;
@@ -22,7 +23,7 @@ tooltip {
     color: @on-surface;
     border: 3px solid @outline;
     margin: 5px;
-    padding: 2px 2px;
+    padding: 7px 7px;
 }
 
 #sys,
@@ -30,9 +31,8 @@ tooltip {
     background-color: @primary;
     color: @on-primary;
     border-radius: 10px;
-    padding: 0 8px;
     margin: 5px 2px;
-    min-width: 15px;
+    padding: 0px 8px
 }
 
 #sys:hover,
@@ -44,27 +44,26 @@ tooltip {
 #workspaces {
     background-color: @surface;
     border-radius: 10px;
-    padding: 0 8px;
+    padding: 0 4px;
     margin: 5px 2px;
 }
 
 #workspaces button {
     color: @on-surface;
-    padding: 0 2px; 
-    margin: 5px 4px;    
+    border-radius: 50%;
+    margin: 2px 2px;    
+    min-width: 26px;
+    min-height: 26px;
 }
 
 #workspaces button:hover {
-    color: @surface;
-    border-radius: 100px;
+    background-color: @surface-container;
+    color: @on-surface-container;
 }
 
 #workspaces button.focused {
     background-color: @primary;
     color: @on-primary;
-    padding: 0 2px; 
-    margin: 5px 4px;    
-    border-radius: 100px;
 }
 
 #workspaces button.focused:hover {
@@ -76,8 +75,8 @@ tooltip {
     background-color: @surface;
     color: @on-surface;
     border-radius: 10px;
-    padding: 0 8px;
     margin: 5px 2px;
+    padding: 0 8px;
 }
 
 #mpris:hover {
@@ -109,9 +108,8 @@ tooltip {
     background-color: @primary;
     color: @on-primary;
     border-radius: 10px;
-    padding: 0 8px;
     margin: 5px 2px;
-    min-width: 15px;
+    padding: 0 8px;
 }
 
 #clock:hover {
@@ -129,9 +127,8 @@ tooltip {
     background-color: @surface;
     color: @on-surface;
     border-radius: 10px;
-    padding: 0 8px;
     margin: 5px 2px;
-    min-width: 15px;
+    padding: 0 8px;
 }
 
 #language:hover,
