@@ -13,9 +13,8 @@ window#waybar {
     background-color: @background;
     border-bottom: 3px solid @outline;
     color: @on-surface;
-    box-shadow: 0 5 8px 0 alpha(@shadow, 0.8);
-    transition-property: background-color;
-    transition-duration: .5s;
+    box-shadow: 0 5px 8px 0 alpha(@shadow, 0.8);
+    transition: background-color .5s;
 }
 
 tooltip {
@@ -23,174 +22,169 @@ tooltip {
     color: @on-surface;
     border: 3px solid @outline;
     margin: 5px;
-    padding: 7px 7px;
+    padding: 0.6em;
 }
 
 #sys,
-#custom-swaync {
-    background-color: @primary;
-    color: @on-primary;
-    border-radius: 10px;
-    margin: 5px 2px;
-    padding: 0px 8px
-}
-
-#sys:hover,
-#custom-swaync:hover {
-    background-color: @primary-container;
-    color: @on-primary-container;
-}
-
-#workspaces {
-    background-color: @surface;
-    border-radius: 10px;
-    padding: 0 4px;
-    margin: 5px 2px;
-}
-
-#workspaces button {
-    color: @on-surface;
-    border-radius: 50%;
-    margin: 2px 2px;    
-    min-width: 26px;
-    min-height: 26px;
-}
-
-#workspaces button:hover {
-    background-color: @surface-container;
-    color: @on-surface-container;
-}
-
-#workspaces button.focused {
-    background-color: @primary;
-    color: @on-primary;
-}
-
-#workspaces button.focused:hover {
-    background-color: @primary-container;
-    color: @on-primary-container;
-}
-
-#mpris {
-    background-color: @surface;
-    color: @on-surface;
-    border-radius: 10px;
-    margin: 5px 2px;
-    padding: 0 8px;
-}
-
-#mpris:hover {
-    background-color: @surface-container;
-    color: @on-surface-container;
-}
-
-#mpris.playing {
-    background-color: @surface;
-    color: @primary;
-}
-
-#mpris.playing:hover {
-    background-color: @primary-container;
-    color: @on-primary-container;
-}
-
-#mpris.paused {
-    background-color: @surface;
-    color: @secondary;
-}
-
-#mpris.paused:hover {
-    background-color: @secondary-container;
-    color: @on-secondary-container;
-}
-
-#clock {
-    background-color: @primary;
-    color: @on-primary;
-    border-radius: 10px;
-    margin: 5px 2px;
-    padding: 0 8px;
-}
-
-#clock:hover {
-    background-color: @primary-container;
-    color: @on-primary-container;
-}
-
+#workspaces,
+#mpris,
+#clock,
 #tray,
 #language,
 #bluetooth,
 #network,
 #wireplumber,
-#backlight, 
-#hardware {
-    background-color: @surface;
-    color: @on-surface;
+#backlight,
+#hardware,
+#custom-swaync {
     border-radius: 10px;
     margin: 5px 2px;
+    transition: all 0.2s ease-in-out;
+}
+
+#mpris, 
+#clock, 
+#language, 
+#wireplumber, 
+#backlight,
+#hardware {
     padding: 0 8px;
 }
 
-#language:hover,
+#network, 
+#bluetooth,
+#custom-swaync {
+    padding: 0;
+    min-width: 2.2em;
+}
+
+#sys {
+    padding: 0;
+}
+
+#custom-logo {
+    min-width: 2.2em;
+}
+
+#tray {
+    padding: 0 4px;
+    min-width: 1.6em;
+}
+
+#workspaces {
+    padding: 0 4px;
+}
+
+
+#sys, 
+#clock, 
+#custom-swaync,
+#workspaces button.focused {
+    background-color: @primary;
+    color: @on-primary;
+}
+
+#sys:hover, 
+#clock:hover, 
+#custom-swaync:hover, 
+#workspaces button.focused:hover {
+    background-color: @primary-container;
+    color: @on-primary-container;
+}
+
+#workspaces, 
+#mpris, 
+#tray, 
+#language,
+#bluetooth, 
+#network,
+#wireplumber, 
+#backlight, 
+#hardware, 
+#tray menu {
+    background-color: @surface;
+    color: @on-surface;
+}
+
+#mpris:hover, 
+#language:hover, 
 #bluetooth:hover,
-#network:hover,
-#wireplumber:hover,
+#network:hover, 
+#wireplumber:hover, 
 #backlight:hover, 
-#hardware:hover {
+#hardware:hover,
+#workspaces button:hover {
     background-color: @surface-container;
     color: @on-surface-container;
 }
 
-#network.disabled,
-#network.disconnected, 
-#bluetooth.disabled,
-#bluetooth.off,
+#workspaces button {
+    color: @on-surface;
+    border-radius: 50%;
+    margin: 2px 2px;
+    min-width: 2em;
+    min-height: 2em;
+    transition: all 0.2s ease-in-out;
+}
+
+#mpris.playing { 
+    color: @primary; 
+}
+#mpris.playing:hover {
+    background-color: @primary-container;
+    color: @on-primary-container;
+}
+
+#mpris.paused { 
+    color: @secondary;
+}
+#mpris.paused:hover {
+    background-color: @secondary-container;
+    color: @on-secondary-container;
+}
+
+#network.disabled, 
+#network.disconnected,
+#bluetooth.disabled, 
+#bluetooth.off, 
 #wireplumber.muted {
     color: @secondary;
 }
 
 #network.disabled:hover,
-#network.disconnected:hover, 
-#bluetooth.disabled:hover,
-#bluetooth.off:hover,
+#network.disconnected:hover,
+#bluetooth.disabled:hover, 
+#bluetooth.off:hover, 
 #wireplumber.muted:hover {
     background-color: @secondary-container;
     color: @on-secondary-container;
 }
 
 #tray menu {
-    background-color: @surface;
-    color: @on-surface;
     border: 3px solid @outline;
-    border-radius: 0px;
+    border-radius: 0;
 }
 
-#custom-shutdown {
-    margin-left: 14px;
-    margin-right: 8px;
+#custom-shutdown { 
+    margin: 0 8px 0 14px; 
+}
+#power-profiles-daemon { 
+    margin: 0 14px 0 8px; 
+}
+#custom-reboot, 
+#cpu, 
+#memory { 
+    margin: 0 8px; 
 }
 
-#power-profiles-daemon {
-    margin-left: 8px;
-    margin-right: 14px;
-}
-
-#custom-reboot,
-#cpu,
-#memory {
-    margin: 0px 8px;
-}
-
-#custom-shutdown:hover,
+#custom-shutdown:hover, 
 #custom-reboot:hover {
     color: @on-error-container;
 }
 
-#battery.warning {
+#battery.warning { 
     color: @tetriary;
+} 
+#battery.critical { 
+    color: @error; 
 }
-
-#battery.critical {
-    color: @error;
-}
-

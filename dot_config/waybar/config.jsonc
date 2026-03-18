@@ -128,16 +128,14 @@
   },
 
   "bluetooth": {
-    "format": " {status}",
-    "format-no-controller": "",
+    "format": "",
     "format-disabled": "󰂲",
-    "format-connected": "󰂱 {num_connections}",
-    "format-connected-battery": "󰥉 {device_battery_percentage}%",
+    "format-connected": "󰂱",
     "tooltip-format": " {controller_alias}, {controller_address}",
     "tooltip-format-disabled": "󰂲 Bluetooth disabled",
-    "tooltip-format-connected": "󰂱 {controller_alias},\t{controller_address}\n󰾰 {device_enumerate}",
+    "tooltip-format-connected": "󰂱 {controller_alias}, {controller_address}\n󰾰 {device_enumerate}",
     "tooltip-format-enumerate-connected": "󰂱 {device_alias}, {device_address}",
-    "tooltip-format-enumerate-connected-battery": "󰂱 {device_alias},\t{device_address}\n󰥉 {device_battery_percentage}%",
+    "tooltip-format-enumerate-connected-battery": "󰂱 {device_alias}, {device_address}\n󰥉 {device_battery_percentage}%",
     "on-click": "foot --app-id floating-terminal -o main.pad=0x0 bluetui"
   },
 
