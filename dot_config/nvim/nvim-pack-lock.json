@@ -24,6 +24,14 @@
       "rev": "a9d8cb68ee7184111dc66156c4a2ebabfbe01bc5",
       "src": "https://codeberg.org/mfussenegger/nvim-dap"
     },
+    "nvim-dap-python": {
+      "rev": "1808458eba2b18f178f990e01376941a42c7f93b",
+      "src": "https://codeberg.org/mfussenegger/nvim-dap-python"
+    },
+    "nvim-dap-view": {
+      "rev": "af144cfbdeafd90dfdaa3d406e3f8e06ddc4f0e3",
+      "src": "https://github.com/igorlfs/nvim-dap-view"
+    },
     "nvim-lspconfig": {
       "rev": "841c6d4139aedb8a3f2baf30cef5327371385b93",
       "src": "https://github.com/neovim/nvim-lspconfig"
@@ -32,6 +40,10 @@
       "rev": "42fc28ba918343ebfd5565147a42a26580579482",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'master'"
+    },
+    "oil.nvim": {
+      "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",
+      "src": "https://github.com/stevearc/oil.nvim"
     },
     "trouble.nvim": {
       "rev": "bd67efe408d4816e25e8491cc5ad4088e708a69a",
