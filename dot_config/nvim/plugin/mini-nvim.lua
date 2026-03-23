@@ -20,9 +20,38 @@ require("mini.surround").setup()
 
 require("mini.cursorword").setup()
 
-require("mini.notify").setup()
 require("mini.tabline").setup()
 require("mini.statusline").setup()
+
+require("mini.notify").setup({
+    lsp_progress = {
+        enable = true,
+        level = 'WARN',
+        duration_last = 1000,
+    },
+})
+
+local indentscope = require("mini.indentscope")
+indentscope.setup({
+    draw = {
+        delay = 0,
+        animation = indentscope.gen_animation.none()
+    },
+})
+
+local hipatterns = require('mini.hipatterns')
+hipatterns.setup({
+  highlighters = {
+    -- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
+    fixme = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
+    hack  = { pattern = '%f[%w]()HACK()%f[%W]',  group = 'MiniHipatternsHack'  },
+    todo  = { pattern = '%f[%w]()TODO()%f[%W]',  group = 'MiniHipatternsTodo'  },
+    note  = { pattern = '%f[%w]()NOTE()%f[%W]',  group = 'MiniHipatternsNote'  },
+
+    -- Highlight hex color strings (`#rrggbb`) using that color
+    hex_color = hipatterns.gen_highlighter.hex_color(),
+  },
+})
 
 local miniclue = require('mini.clue')
 miniclue.setup({
@@ -64,6 +93,7 @@ miniclue.setup({
         miniclue.gen_clues.windows(),
         miniclue.gen_clues.z(),
     },
+
     window = {
         delay = 700,
     },

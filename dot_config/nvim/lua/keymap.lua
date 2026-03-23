@@ -7,6 +7,11 @@ set('n', '<leader>!u', vim.pack.update, { desc = "NVIM pack update" })
 -- LSP mappings
 set('n', "<leader>f", vim.lsp.buf.format, { desc = "LSP code formatter" })
 set('n', '<leader>r', vim.lsp.buf.rename, { desc = "LSP rename" })
+set('n', '<leader>gd', vim.lsp.buf.definition, { desc = "LSP go to Definition" })
+set('n', '<leader>gd', vim.lsp.buf.declaration, { desc = "LSP go to declaration" })
+set('n', '<leader>gd', vim.lsp.buf.implementation, { desc = "LSP go to implementation" })
+set('n', '<leader>K', vim.lsp.buf.hover, { desc = "Hover Docs" })
+set('n', '<leader>cc', vim.lsp.codelens.run, { desc = "LSP codelens" })
 
 -- Explorer mappings
 set('n', "<leader>e", ":Oil<CR>", { desc = "Open Oil" })
@@ -21,6 +26,9 @@ set('n', "<leader>tQ", ":tabonly<CR>", { desc = "Leave only current tab" })
 set('n', "<leader>st", ":botright split | resize 10 | terminal<CR>", { desc = "Open splitted term" })
 set('n', "<leader>se", ":topleft vsplit | vertical resize 30 | Oil<CR>", { desc = "Open splitted Oil" })
 -- set('n', "<leader>oe", ":Lexplore<CR>", { desc = "Open NetRW in left column" })
+
+-- gitsigns
+set('n', "<leader>vb", ":Gitsigns blame<CR>", { desc = "Gitsign blame" })
 
 -- fzf-lua mappings
 set('n', "<leader>zf", ":FzfLua files<CR>", { desc = "FzF files" })

@@ -1,5 +1,5 @@
 require("options")
-require("netrw")
+require("autocmd")
 require("keymap")
 require("colorscheme")
 require("lsp")
