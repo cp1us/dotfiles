@@ -30,4 +30,4 @@ export FZF_DEFAULT_OPTS=" \
 --color=selected-bg:#504945 \
 --color=border:#665c54,label:#ebdbb2"
 
-
+. "/home/nikit/.local/share/bob/env/env.sh"

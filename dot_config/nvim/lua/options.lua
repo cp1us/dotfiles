@@ -4,8 +4,6 @@ opt.mouse = "a"
 opt.termguicolors = true
 opt.clipboard = "unnamedplus"
 
-opt.confirm = true
-
 opt.swapfile = false
 opt.undofile = true
 
@@ -31,6 +29,10 @@ opt.shiftwidth = 2
 opt.ignorecase = true
 opt.smartcase = true
 
+opt.shortmess:append("c")
+
+-- opt.autocomplete = true
+opt.complete = 'o,.,w,b,u'
 opt.completeopt = {
   "fuzzy",
   "nosort",
@@ -38,6 +40,10 @@ opt.completeopt = {
   "menuone",
   "noselect",
 }
+-- opt.wildoptions = "pum"
+-- opt.wildmode = "noselect:lastused,full"
+opt.pummaxwidth = 20
+opt.pumheight = 5
 
 opt.langmap =
-  "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
+"ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"

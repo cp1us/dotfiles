@@ -14,6 +14,7 @@ set("n", "<leader>lc", vim.lsp.codelens.run, { desc = "Codelens (LSP)" })
 set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition (LSP)" })
 set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to Declaration (LSP)" })
 set("n", "gi", vim.lsp.buf.implementation, { desc = "Go to Implementation (LSP)" })
+set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic Quickfix list' })
 
 -- Buffer mappings
 set("n", "<leader>q", "<cmd>confirm bd<CR>", { desc = "Close Buffer" })
@@ -26,7 +27,7 @@ set("n", "<leader>to", "<cmd>tabonly<CR>", { desc = "Leave only current Tab" })
 -- Split windows mappings
 set("n", "<leader>sv", "<cmd>vertical split<CR>", { desc = "Vertical Split" })
 set("n", "<leader>sh", "<cmd>horizontal split<CR>", { desc = "Horizontal Split" })
-set("n", "<leader>st", "<cmd>botright split | resize 10 | terminal<CR>", { desc = "Open Splitted Term" })
+set("n", "<leader>st", "<cmd>botright split | resize 12 | lcd %:p:h | terminal<CR>", { desc = "Open Splitted Term" })
 
 -- Term mappings
 set("t", "<esc>", [[<C-\><C-n>]], { desc = "Exit Term" })

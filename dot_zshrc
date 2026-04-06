@@ -27,11 +27,21 @@ function pamac() {
 }
 
 function yz() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	command yazi "$@" --cwd-file="$tmp"
-	IFS= read -r -d '' cwd < "$tmp"
-	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
-	rm -f -- "$tmp"
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  command yazi "$@" --cwd-file="$tmp"
+  IFS= read -r -d '' cwd < "$tmp"
+  [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+  rm -f -- "$tmp"
+}
+
+function fx() {
+  local RUNTIME_DIR="/run/user/1000/felix" 
+  SHELL_PID=$$ command felix "$@"
+  if [ -f "$RUNTIME_DIR/$$" ]
+  then
+    cd "$(cat "$RUNTIME_DIR/$$")"
+    rm "$RUNTIME_DIR/$$"
+  fi
 }
 
 # autorun

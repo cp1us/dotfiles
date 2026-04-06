@@ -3,7 +3,6 @@ return {
   filetypes = { "python" },
   root_markers = {
     "pyproject.toml",
-    "setup.py",
     "requirements.txt",
     ".git",
   },
@@ -13,6 +12,11 @@ return {
         autoSearchPaths = true,
         useLibraryCodeForTypes = true,
         diagnosticMode = "workspace",
+        diagnosticSeverityOverrides = {
+          reportUnusedImport = "none",
+          reportUnusedVariable = "none",
+          reportUndefinedVariable = "none",
+        },
       },
     },
   },

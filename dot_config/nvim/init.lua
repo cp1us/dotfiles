@@ -1,5 +1,5 @@
 require("globals")
 require("options")
+require("lsp")
 require("autocmd")
 require("keymap")
-require("lsp")
