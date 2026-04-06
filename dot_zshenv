@@ -29,5 +29,3 @@ export FZF_DEFAULT_OPTS=" \
 --color=marker:#fabd2f,fg+:#fbf1c7,prompt:#fe8019,hl+:#fabd2f \
 --color=selected-bg:#504945 \
 --color=border:#665c54,label:#ebdbb2"
-
-. "/home/nikit/.local/share/bob/env/env.sh"

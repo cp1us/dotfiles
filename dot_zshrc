@@ -34,16 +34,6 @@ function yz() {
   rm -f -- "$tmp"
 }
 
-function fx() {
-  local RUNTIME_DIR="/run/user/1000/felix" 
-  SHELL_PID=$$ command felix "$@"
-  if [ -f "$RUNTIME_DIR/$$" ]
-  then
-    cd "$(cat "$RUNTIME_DIR/$$")"
-    rm "$RUNTIME_DIR/$$"
-  fi
-}
-
 # autorun
 eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
