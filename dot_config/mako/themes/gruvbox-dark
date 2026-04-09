@@ -1,0 +1,17 @@
+background-color=#282828
+text-color=#ebdbb2
+border-color=#928374
+progress-color=over #504945
+
+# Urgency settings
+[urgency=low]
+border-color=#504945
+text-color=#a89984
+
+[urgency=normal]
+border-color=#928374
+
+[urgency=high]
+border-color=#cc241d
+text-color=#fb4934
+
